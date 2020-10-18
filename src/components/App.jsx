@@ -3,15 +3,14 @@ import { Button } from 'antd-mobile';
 import {  add,decrease} from "../redux/actions";
 class App extends React.Component {
   add=()=>{
-    this.props.store.dispatch(add(1)) 
+    this.props.add(1)
   }
   decrease=()=>{
-    this.props.store.dispatch(decrease(1)) 
+    this.props.decrease(1)
    
   }
   render(){
-   const countReducer=this.props.store.getState().countReducer
- console.log(111,countReducer)
+   const {countReducer}=this.props.data
     return (
       <div>
         <Button  type="primary">ANTD自定义主题</Button>

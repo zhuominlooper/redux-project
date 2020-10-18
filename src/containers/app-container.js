@@ -1,9 +1,10 @@
 
 import App from "../components/App";
-import { connect } from "react-redux";
-import { addAction,decreaseAction } from "../redux/actions";
+import { connect } from "../libs/react-redux/index";
+import { add,decrease } from "../redux/actions";
+
 export default connect(
     state=>({data:state}),
-    {addAction,decreaseAction}
+    {add,decrease}
 )(App)
 

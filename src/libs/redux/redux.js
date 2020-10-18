@@ -30,17 +30,15 @@ export function createStore(reducer){
 //接收多个reducer函数的对象，返回一个新的reduer函数
 export function combineReducers(reducers){//reducers是一个对象，{test:test()} 
   return function(state={},action){
-    debugger
-         const newState={}
-    const keys=Object.keys(reducers)
-    keys.forEach(key=>{
+      const newState={}
+      const keys=Object.keys(reducers)
+      keys.forEach(key=>{
       const childReducer=reducers[key]
       const childState=state[key]
       const newChildState=childReducer(childState,action)
       newState[key]=newChildState
     }) 
        return  newState 
-
   }
 
 }
